@@ -1,3 +1,12 @@
+import TopBar from "./components/TopBar";
+// ...
+return (
+  <>
+    <TopBar />
+    {/* rest of your router / pages */}
+  </>
+);
+
 import { Outlet, Link, NavLink, useNavigate } from 'react-router-dom'
 import { supabase } from './lib/supabase'
 import { useEffect, useState } from 'react'
