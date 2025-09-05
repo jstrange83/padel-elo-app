@@ -1,5 +1,5 @@
 import { Outlet, Link, NavLink, useNavigate } from 'react-router-dom'
-import { supabase } from '../lib/supabase'
+import { supabase } from './lib/supabase'
 import { useEffect, useState } from 'react'
 
 export default function App() {
