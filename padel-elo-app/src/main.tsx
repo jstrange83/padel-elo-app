@@ -1,3 +1,4 @@
+import Home from './pages/Home'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -14,7 +15,12 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
-      { index: true, element: <Leaderboard /> },
+      // Forsiden (/) viser nu Home
+      { index: true, element: <Home /> },
+
+      // Ranglisten flyttes til /leaderboard
+      { path: 'leaderboard', element: <Leaderboard /> },
+
       { path: 'login', element: <Login /> },
       { path: 'fines', element: <FinePage /> },
       { path: 'matches/new', element: <MatchForm /> },
@@ -22,6 +28,7 @@ const router = createBrowserRouter([
     ],
   },
 ])
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
