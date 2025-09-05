@@ -2,4 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
+/* Google font (valgfri – ellers fjern linjen) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --radius: 14px;
+}
+
+/* Page width helper */
+.container-page {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+/* Glass nav */
+.nav-glass {
+  @apply bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-soft;
+}
+
+/* Active link underline */
+.nav-link {
+  @apply text-slate-600 hover:text-slate-900 relative;
+}
+.nav-link-active {
+  @apply text-slate-900;
+}
+.nav-link-active::after {
+  content: "";
+  @apply absolute left-0 -bottom-2 w-full h-0.5 bg-brand-500 rounded-full;
+}
+
+/* Hero overlay gradient */
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.25) 50%, rgba(0,0,0,0) 100%);
+}
