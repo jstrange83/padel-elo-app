@@ -3,12 +3,10 @@ export default function Hero() {
   return (
     <section className="relative isolate">
       <img
-        src="/Padelholdet.jpg"
-        alt="Padelholdet – fællesskab og rangliste"
-        className="h-[260px] w-full object-cover sm:h-[340px] md:h-[420px]"
-        loading="eager"
-        fetchPriority="high"
-      />
+  src="/Padelholdet.jpg"
+  alt="Padelholdet"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
       <div className="absolute inset-0 bg-black/45" />
       <div className="absolute inset-0 flex items-center">
         <div className="container-page px-4">
