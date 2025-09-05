@@ -2,7 +2,6 @@
 export default function Hero() {
   return (
     <section className="relative isolate">
-      {/* Hero-billede fra /public */}
       <img
         src="/Padelholdet.jpg"
         alt="Padelholdet – fællesskab og rangliste"
@@ -10,19 +9,13 @@ export default function Hero() {
         loading="eager"
         fetchPriority="high"
       />
-
-      {/* Mørk overlay for bedre tekstkontrast */}
       <div className="absolute inset-0 bg-black/45" />
-
-      {/* Tekst ovenpå billedet */}
       <div className="absolute inset-0 flex items-center">
         <div className="container-page px-4">
           <h1 className="text-white text-3xl sm:text-4xl font-bold tracking-tight">
             Padelholdet
           </h1>
-          <p className="text-white/90 mt-2">
-            Rangliste · kampe · bøder
-          </p>
+          <p className="text-white/90 mt-2">Rangliste · kampe · bøder</p>
         </div>
       </div>
     </section>
