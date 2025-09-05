@@ -1,37 +1,73 @@
+/* src/index.css --------------------------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Google font (valgfri – ellers fjern linjen) */
+/* Optional Google font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+/* Tokens */
 :root {
   --radius: 14px;
 }
 
-/* Page width helper */
-.container-page {
-  @apply max-w-6xl mx-auto px-4;
+/* --- Base tweaks --- */
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
 }
 
-/* Glass nav */
+/* --- Utilities you can use in JSX --- */
+@layer utilities {
+  /* Page width helper */
+  .container-page {
+    @apply max-w-6xl mx-auto px-4;
+  }
+
+  /* Soft shadow used on cards / buttons */
+  .shadow-soft {
+    /* Using raw CSS for the nicest soft shadow */
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+  }
+}
+
+/* Glassy nav bar */
 .nav-glass {
-  @apply bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-soft;
+  /* use raw CSS here because variants can't be @applied */
+  background-color: rgba(255, 255, 255, 0.80);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
 }
 
-/* Active link underline */
+/* Navigation links */
 .nav-link {
-  @apply text-slate-600 hover:text-slate-900 relative;
+  @apply relative text-slate-600;
+}
+.nav-link:hover {
+  @apply text-slate-900;
 }
 .nav-link-active {
   @apply text-slate-900;
 }
 .nav-link-active::after {
   content: "";
-  @apply absolute left-0 -bottom-2 w-full h-0.5 bg-brand-500 rounded-full;
+  @apply absolute left-0 -bottom-2 w-full h-0.5 rounded-full bg-sky-500; /* change to your brand color if you like */
 }
 
-/* Hero overlay gradient */
+/* Dark gradient overlay helper for the hero image */
 .hero-overlay {
   background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.25) 50%, rgba(0,0,0,0) 100%);
+}
+
+/* Optional: a simple button style used a few places */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-medium;
+  @apply text-white bg-slate-900 hover:bg-slate-800;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
 }
