@@ -3,3 +3,9 @@
   command = "npm run build"
   publish = "dist"
   functions = "netlify/functions"
+
+# SPA fallback: alle ruter går til index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
